@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "select3d": [
+        "dist/select3d"
+      ],
+      "select3d/*": [
+        "dist/select3d/*"
+      ]
+    }
   }
 }
