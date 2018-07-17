@@ -161,6 +161,86 @@
           }
         }
       }
+    },
+    "tensor-time": {
+      "root": "projects/tensor-time",
+      "sourceRoot": "projects/tensor-time/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tensor-time/tsconfig.lib.json",
+            "project": "projects/tensor-time/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/tensor-time/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tensor-time/src/test.ts",
+            "tsConfig": "projects/tensor-time/tsconfig.spec.json",
+            "karmaConfig": "projects/tensor-time/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tensor-time/tsconfig.lib.json",
+              "projects/tensor-time/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "twitch-td": {
+      "root": "projects/twitch-td",
+      "sourceRoot": "projects/twitch-td/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/twitch-td/tsconfig.lib.json",
+            "project": "projects/twitch-td/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/twitch-td/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/twitch-td/src/test.ts",
+            "tsConfig": "projects/twitch-td/tsconfig.spec.json",
+            "karmaConfig": "projects/twitch-td/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/twitch-td/tsconfig.lib.json",
+              "projects/twitch-td/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "library-spawning-ground"

@@ -22,6 +22,18 @@
       ],
       "select3d/*": [
         "dist/select3d/*"
+      ],
+      "tensor-time": [
+        "dist/tensor-time"
+      ],
+      "tensor-time/*": [
+        "dist/tensor-time/*"
+      ],
+      "twitch-td": [
+        "dist/twitch-td"
+      ],
+      "twitch-td/*": [
+        "dist/twitch-td/*"
       ]
     }
   }
