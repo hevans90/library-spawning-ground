@@ -18,6 +18,27 @@
   </a>
 
 </mat-toolbar>
-<tensor-time></tensor-time>
 
-<select3d-dropdown></select3d-dropdown>
+<main class="mat-typography app-main">
+
+  <h3>
+    This app is an Angular 6 library showcase. Cycle between the demos below.
+  </h3>
+  <mat-button-toggle-group class="app-demo-toggle" #group="matButtonToggleGroup">
+    <mat-button-toggle [routerLink]="'webGL'" routerLinkActive #rla1="routerLinkActive" [checked]="rla1.isActive">
+      WebGL
+    </mat-button-toggle>
+    <mat-button-toggle [routerLink]="'tensorFlow'" routerLinkActive #rla2="routerLinkActive" [checked]="rla2.isActive">
+      TensorFlow
+    </mat-button-toggle>
+    <mat-button-toggle [routerLink]="'canvasGame'" routerLinkActive #rla3="routerLinkActive" [checked]="rla3.isActive">
+      Canvas Game
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <router-outlet></router-outlet>
+</main>
+
+
+<!-- <tensor-time></tensor-time>
+
+<select3d-dropdown></select3d-dropdown> -->

@@ -1,10 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
-// library projects
-import { Select3dModule } from 'select3d';
-import { TensorTimeModule } from 'tensor-time';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MaterialManifestModule } from './material-manifest/material-manifest.module';
@@ -14,8 +11,23 @@ import { MaterialManifestModule } from './material-manifest/material-manifest.mo
     BrowserModule,
     MaterialManifestModule,
     BrowserAnimationsModule,
-    Select3dModule,
-    TensorTimeModule,
+    RouterModule.forRoot(
+      [
+        {
+          path: 'webGL',
+          loadChildren: 'select3d#Select3dModule',
+        },
+        {
+          path: 'tensorFlow',
+          loadChildren: 'tensor-time#TensorTimeModule',
+        },
+        {
+          path: 'canvasGame',
+          loadChildren: 'twitch-td#TwitchTdModule',
+        },
+      ],
+      { initialNavigation: 'enabled' },
+    ),
   ],
   declarations: [AppComponent],
   providers: [],
