@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --aot",
     "build": "ng build",
     "watch:all": "yarn watch:select3d & yarn watch:tensor-time & yarn watch:twitch-td",
     "watch:select3d": "npx nodemon --ext .ts -w ./projects/select3d --exec 'ng build select3d'",
