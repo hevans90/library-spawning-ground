@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "watch:all": "yarn watch:select3d & yarn watch:tensor-time & yarn watch:twitch-td",
+    "watch:select3d": "npx nodemon --ext .ts -w ./projects/select3d --exec 'ng build select3d'",
     "watch:tensor-time": "npx nodemon --ext .ts -w ./projects/tensor-time --exec 'ng build tensor-time'",
     "watch:twitch-td": "npx nodemon --ext .ts -w ./projects/twitch-td --exec 'ng build twitch-td'",
     "test": "ng test",
