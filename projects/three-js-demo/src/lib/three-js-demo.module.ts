@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Select3dComponent } from './select3d.component';
+import { ThreeJsDemoComponent } from './three-js-demo.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -8,10 +8,10 @@ import { RouterModule } from '@angular/router';
       {
         path: '',
         pathMatch: 'full',
-        component: Select3dComponent,
+        component: ThreeJsDemoComponent,
       },
     ]),
   ],
-  declarations: [Select3dComponent],
+  declarations: [ThreeJsDemoComponent],
 })
-export class Select3dModule {}
+export class ThreeJsDemoModule {}

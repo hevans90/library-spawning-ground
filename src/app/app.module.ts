@@ -15,7 +15,7 @@ import { MaterialManifestModule } from './material-manifest/material-manifest.mo
       [
         {
           path: 'webGL',
-          loadChildren: 'select3d#Select3dModule',
+          loadChildren: 'three-js-demo#ThreeJsDemoModule',
         },
         {
           path: 'tensorFlow',

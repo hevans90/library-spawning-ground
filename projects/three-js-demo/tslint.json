@@ -4,13 +4,13 @@
         "directive-selector": [
             true,
             "attribute",
-            "select3d",
+            "three-js-demo",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "select3d",
+            "three-js-demo",
             "kebab-case"
         ]
     }

@@ -1,22 +1,16 @@
-import {
-  Component,
-  AfterViewInit,
-  ElementRef,
-  ViewChild,
-  HostListener,
-} from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import * as Three from 'three';
 const OrbitControls = require('three-orbit-controls')(Three);
 
 @Component({
-  selector: 'select3d-dropdown',
+  selector: 'threeJsDemo-dropdown',
   template: `
   <div #canvas>
   </div>
   `,
   styles: [],
 })
-export class Select3dComponent implements AfterViewInit {
+export class ThreeJsDemoComponent implements AfterViewInit {
   public scene: Three.Scene;
   public camera: Three.PerspectiveCamera;
   public renderer: Three.WebGLRenderer = new Three.WebGLRenderer({

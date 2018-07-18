@@ -17,11 +17,11 @@
       "dom"
     ],
     "paths": {
-      "select3d": [
-        "dist/select3d"
+      "three-js-demo": [
+        "dist/three-js-demo"
       ],
-      "select3d/*": [
-        "dist/select3d/*"
+      "three-js-demo/*": [
+        "dist/three-js-demo/*"
       ],
       "tensor-time": [
         "dist/tensor-time"
