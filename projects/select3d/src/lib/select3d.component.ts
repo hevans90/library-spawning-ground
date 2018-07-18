@@ -6,6 +6,7 @@ import {
   HostListener,
 } from '@angular/core';
 import * as Three from 'three';
+const OrbitControls = require('three-orbit-controls')(Three);
 
 @Component({
   selector: 'select3d-dropdown',
@@ -18,32 +19,37 @@ import * as Three from 'three';
 export class Select3dComponent implements AfterViewInit {
   public scene: Three.Scene;
   public camera: Three.PerspectiveCamera;
-  public renderer: Three.WebGLRenderer = new Three.WebGLRenderer();
+  public renderer: Three.WebGLRenderer = new Three.WebGLRenderer({
+    alpha: false,
+  });
   public cube: Three.Mesh;
+  public light: Three.PointLight;
   @ViewChild('canvas') private canvasRef: ElementRef;
 
+  public orbitals: Three.OrbitControls;
+
   constructor() {
-    // onWindowResize(event) {
-    //   this.renderer.setSize(event.target.innerWidth, event.target.innerHeight);
-    // }
     this.scene = new Three.Scene();
-    this.camera = new Three.PerspectiveCamera(75, 1, 0.1, 10000);
+    this.scene.background = new Three.Color('#F8F8F8');
+    this.camera = new Three.PerspectiveCamera(75, 16 / 9, 0.1, 10000);
     this.camera.position.z = 800;
+    this.orbitals = new OrbitControls(this.camera, this.renderer.domElement);
+
     const geometry = new Three.BoxGeometry(500, 200, 200);
     const material = new Three.MeshPhongMaterial({
-      color: 'grey',
+      color: 'red',
     });
     this.cube = new Three.Mesh(geometry, material);
     this.scene.add(this.cube);
 
-    const light = new Three.PointLight('red', 3);
-    light.position.set(0, 0, 500);
-    this.scene.add(light);
+    this.light = new Three.PointLight('white', 1);
+    this.light.position.copy(this.camera.position);
+    this.scene.add(this.light);
   }
 
   ngAfterViewInit(): void {
     this.canvasRef.nativeElement.appendChild(this.renderer.domElement);
-    this.renderer.setSize(640, 360);
+    this.renderer.setSize(640, 320);
     this.animate();
   }
 
@@ -51,7 +57,7 @@ export class Select3dComponent implements AfterViewInit {
     window.requestAnimationFrame(() => this.animate());
     this.cube.rotation.x += 0.003;
     this.cube.rotation.y += 0.01;
-    // this.cube.rotation.z += 0.02;
+    this.light.position.copy(this.camera.position);
     this.renderer.render(this.scene, this.camera);
   }
 }
